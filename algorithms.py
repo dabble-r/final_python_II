@@ -43,10 +43,10 @@ def show_all(items):
   for indx, el in enumerate(items):
     print(f'{indx+1}:\n {el}')
 
-test = [4,6,9,8,10,13,547,1034,6,43]
-quick_sort(test)
+#test = [4,6,9,8,10,13,547,1034,6,43]
+#quick_sort(test)
 # print(test)
 
-find = binary_search(test, 0, len(test)-1, 13)
-print(test)
-print(find)
+#find = binary_search(test, 0, len(test)-1, 13)
+#print(test)
+#print(find)
