@@ -3,12 +3,19 @@
 # ---------------------------------------- DO NOT MODIFY THE CODE BELOW THIS LINE ! IF YOU MODIFY THE BELOW CODE YOU WILL GET A 0 ! ---------------------------------------- #
 # THIS CODE IS NECESSARY TO RUN YOUR FILES! 
 #these imports let us create fake data below
+
 #if the import does not work, open your Terminal and type: pip install Faker
 from faker import Faker
+
 # random lets the contact_list be extra shuffled so you can do your sorting algorithm
 import random
+
 #fake lets us create fake data
 fake = Faker()
+
+# user imports  
+# import Contact class
+from phone_information import Contact
 
 # Creates 11 instances of the Contact class (WHICH YOU MUST BUILD -- SEE PHONE_INFORMATION.PY), 10 of which use entirely random fake data
 # NOTE: all of these calls (fake.first_name(), etc) return a string 
@@ -31,3 +38,38 @@ random.shuffle(contact_list)
 # ---------------------------------------- DO NOT MODIFY THE CODE ABOVE THIS LINE ! IF YOU MODIFY THE ABOVE CODE YOU WILL GET A 0 ! ---------------------------------------- #
 
 # Code the remainder of your program below. See assignment for requirements.
+
+# algorithms
+from algorithms import binary_search, quick_sort, show_all
+from phone_information import add_contact, find_contact
+
+                              #-----------------------------------------------------------------------------------------------------#
+
+def main():
+  action = True 
+  
+  while action:
+    quick_sort(contact_list)
+    user = input('\nWelcome to User Phonebook!\n\nWhat is your request?\n\n 1) Show all contacts\n 2) Add a new contact\n 3) Search for a specific contact\n 4) Quit the program\n :')
+    if int(user) in range(1,5):
+      match user:
+        case '1':
+          #print('show all')
+          show_all(contact_list)
+        case '2':
+          add_contact(quick_sort, contact_list)
+          show_all(contact_list)
+        case '3':
+          find_contact(binary_search, contact_list)
+        case '4':
+          print('Session Ended!')
+          action = False 
+    else:
+      user = input('\nEnter correct request\n\nWhat is your request?\n\n 1) Show all contacts\n 2) Add a new contact\n 3) Search for a specific contact\n 4) Quit the program\n :')
+
+
+if __name__ == "__main__":
+  main()
+
+
+
